@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="fa14eebf-8acd-47ae-8f4e-04e9534d7fc6" activeEnvironment="Default" name="Soap" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c19f5aeb-f83f-4a94-9872-f91052ad37d6" wsaVersion="NONE" name="ClientePortSoap11" type="wsdl" bindingName="{http://www.jharomeroh.com/clientes}ClientePortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws/cliente.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws/cliente.wsdl"><con:part><con:url>http://localhost:8080/ws/cliente.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.jharomeroh.com/clientes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.jharomeroh.com/clientes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.jharomeroh.com/clientes">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.jharomeroh.com/clientes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getClienteByIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getClienteByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="cliente" type="tns:cliente"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="cliente">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element name="nombre" type="xs:string"/>
+          <xs:element name="ciudad" type="xs:string"/>
+          <xs:element name="telefono" type="xs:string"/>
+          <xs:element name="celular" type="xs:string"/>
+          <xs:element name="correo" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getAllClienteRequest">
+        <xs:complexType/>
+      </xs:element>
+      <xs:element name="getAllClienteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="cliente" type="tns:cliente"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="serviceStatus">
+        <xs:sequence>
+          <xs:element name="statusCode" type="xs:string"/>
+          <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="addClienteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="ciudad" type="xs:string"/>
+            <xs:element name="telefono" type="xs:string"/>
+            <xs:element name="celular" type="xs:string"/>
+            <xs:element name="correo" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addClienteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+            <xs:element name="cliente" type="tns:cliente"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateClienteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="ciudad" type="xs:string"/>
+            <xs:element name="telefono" type="xs:string"/>
+            <xs:element name="celular" type="xs:string"/>
+            <xs:element name="correo" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateClienteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteClienteRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteClienteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="serviceStatus" type="tns:serviceStatus"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getClienteByIdRequest">
+    <wsdl:part element="tns:getClienteByIdRequest" name="getClienteByIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateClienteResponse">
+    <wsdl:part element="tns:updateClienteResponse" name="updateClienteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteClienteResponse">
+    <wsdl:part element="tns:deleteClienteResponse" name="deleteClienteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addClienteRequest">
+    <wsdl:part element="tns:addClienteRequest" name="addClienteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addClienteResponse">
+    <wsdl:part element="tns:addClienteResponse" name="addClienteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteClienteRequest">
+    <wsdl:part element="tns:deleteClienteRequest" name="deleteClienteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateClienteRequest">
+    <wsdl:part element="tns:updateClienteRequest" name="updateClienteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClienteByIdResponse">
+    <wsdl:part element="tns:getClienteByIdResponse" name="getClienteByIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllClienteRequest">
+    <wsdl:part element="tns:getAllClienteRequest" name="getAllClienteRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllClienteResponse">
+    <wsdl:part element="tns:getAllClienteResponse" name="getAllClienteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ClientePort">
+    <wsdl:operation name="getClienteById">
+      <wsdl:input message="tns:getClienteByIdRequest" name="getClienteByIdRequest"></wsdl:input>
+      <wsdl:output message="tns:getClienteByIdResponse" name="getClienteByIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCliente">
+      <wsdl:input message="tns:updateClienteRequest" name="updateClienteRequest"></wsdl:input>
+      <wsdl:output message="tns:updateClienteResponse" name="updateClienteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCliente">
+      <wsdl:input message="tns:deleteClienteRequest" name="deleteClienteRequest"></wsdl:input>
+      <wsdl:output message="tns:deleteClienteResponse" name="deleteClienteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCliente">
+      <wsdl:input message="tns:addClienteRequest" name="addClienteRequest"></wsdl:input>
+      <wsdl:output message="tns:addClienteResponse" name="addClienteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCliente">
+      <wsdl:input message="tns:getAllClienteRequest" name="getAllClienteRequest"></wsdl:input>
+      <wsdl:output message="tns:getAllClienteResponse" name="getAllClienteResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientePortSoap11" type="tns:ClientePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getClienteById">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getClienteByIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getClienteByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCliente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="updateClienteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateClienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCliente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="deleteClienteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteClienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCliente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addClienteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addClienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllCliente">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getAllClienteRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllClienteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientePortService">
+    <wsdl:port binding="tns:ClientePortSoap11" name="ClientePortSoap11">
+      <soap:address location="http://localhost:8080/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws</con:endpoint></con:endpoints><con:operation id="bf1d229d-5549-4eee-93de-ae49f4993c9d" isOneWay="false" action="" name="addCliente" bindingOperationName="addCliente" type="Request-Response" outputName="addClienteResponse" inputName="addClienteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5104bfa-5b3e-4690-861f-ddce75fab59f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://www.jharomeroh.com/clientes">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cli:addClienteRequest>\r
+         <cli:nombre>Usuario Soap</cli:nombre>\r
+         <cli:ciudad>Bogota</cli:ciudad>\r
+         <cli:telefono>3910835</cli:telefono>\r
+         <cli:celular>3232397300</cli:celular>\r
+         <cli:correo>jhonkisint</cli:correo>\r
+      </cli:addClienteRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.jharomeroh.com/clientes/ClientePort/addClienteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="03247fa6-a85d-4d8c-b687-a51ecec183da" isOneWay="false" action="" name="deleteCliente" bindingOperationName="deleteCliente" type="Request-Response" outputName="deleteClienteResponse" inputName="deleteClienteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="34f8230f-6182-42fe-97c4-f7cbe9ce926e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://www.jharomeroh.com/clientes">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cli:deleteClienteRequest>\r
+         <cli:id>3</cli:id>\r
+      </cli:deleteClienteRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.jharomeroh.com/clientes/ClientePort/deleteClienteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6baedff0-c0c3-436f-bcb8-b47cd692a9dc" isOneWay="false" action="" name="getAllCliente" bindingOperationName="getAllCliente" type="Request-Response" outputName="getAllClienteResponse" inputName="getAllClienteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b8882119-c98c-45f1-9664-ad00fe6826fc" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://www.jharomeroh.com/clientes">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cli:getAllClienteRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.jharomeroh.com/clientes/ClientePort/getAllClienteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="bbb38593-7561-4375-9503-8842970249e4" isOneWay="false" action="" name="getClienteById" bindingOperationName="getClienteById" type="Request-Response" outputName="getClienteByIdResponse" inputName="getClienteByIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d5e45731-cc6f-40dd-ae0a-0e296f8a6980" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://www.jharomeroh.com/clientes">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cli:getClienteByIdRequest>\r
+         <cli:id>2</cli:id>\r
+      </cli:getClienteByIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.jharomeroh.com/clientes/ClientePort/getClienteByIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="b8266bad-a731-4499-a21c-f27738428c34" isOneWay="false" action="" name="updateCliente" bindingOperationName="updateCliente" type="Request-Response" outputName="updateClienteResponse" inputName="updateClienteRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9aec9a6b-7704-463c-826c-4a6234d9cde3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://www.jharomeroh.com/clientes">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cli:updateClienteRequest>\r
+         <cli:id>5</cli:id>\r
+         <cli:nombre>Usuario nuevo 2</cli:nombre>\r
+         <cli:ciudad>Bogota 2</cli:ciudad>\r
+         <cli:telefono>3910835</cli:telefono>\r
+         <cli:celular>3232397300</cli:celular>\r
+         <cli:correo>jhonkisint@gmail.com</cli:correo>\r
+      </cli:updateClienteRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.jharomeroh.com/clientes/ClientePort/updateClienteRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
