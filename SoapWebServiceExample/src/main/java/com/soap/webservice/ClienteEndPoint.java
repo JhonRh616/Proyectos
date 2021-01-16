@@ -79,12 +79,12 @@ public class ClienteEndPoint {
 		System.out.println();
 
 		if (savedClienteEntity == null) {
-			serviceStatus.setStatusCode("CONFLICT");
+			serviceStatus.setStatusCode("500");
 			serviceStatus.setMessage("Exception while adding Entity");
 		} else {
 
 			BeanUtils.copyProperties(savedClienteEntity, newCliente);
-			serviceStatus.setStatusCode("SUCCESS");
+			serviceStatus.setStatusCode("201");
 			serviceStatus.setMessage("Content Added Successfully");
 		}
 
@@ -103,7 +103,7 @@ public class ClienteEndPoint {
 		ClienteEntity clienteFromDB = service.getClienteById(request.getId());
 		
 		if(clienteFromDB == null) {
-			serviceStatus.setStatusCode("NOT FOUND");
+			serviceStatus.setStatusCode("404");
 			serviceStatus.setMessage("Movie = " + request.getId() + " not found");
 		}else {
 			
@@ -118,10 +118,10 @@ public class ClienteEndPoint {
 			boolean flag = service.updateCliente(clienteFromDB);
 			
 			if(flag == false) {
-				serviceStatus.setStatusCode("CONFLICT");
+				serviceStatus.setStatusCode("500");
 				serviceStatus.setMessage("Exception while updating Entity=" + request.getId());;
 			}else {
-				serviceStatus.setStatusCode("SUCCESS");
+				serviceStatus.setStatusCode("200");
 				serviceStatus.setMessage("Content updated Successfully");
 			}
 			
@@ -141,10 +141,10 @@ public class ClienteEndPoint {
 		boolean flag = service.deleteClienteById(request.getId());
 
 		if (flag == false) {
-			serviceStatus.setStatusCode("FAIL");
+			serviceStatus.setStatusCode("500");
 			serviceStatus.setMessage("Exception while deletint Entity id=" + request.getId());
 		} else {
-			serviceStatus.setStatusCode("SUCCESS");
+			serviceStatus.setStatusCode("200");
 			serviceStatus.setMessage("Content Deleted Successfully");
 		}
 
