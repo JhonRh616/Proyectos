@@ -104,7 +104,7 @@ public class ClienteEndPoint {
 		
 		if(clienteFromDB == null) {
 			serviceStatus.setStatusCode("404");
-			serviceStatus.setMessage("Movie = " + request.getId() + " not found");
+			serviceStatus.setMessage("Cliente = " + request.getId() + " 404");
 		}else {
 			
 			// 2. Get updated movie information from the request
@@ -142,7 +142,7 @@ public class ClienteEndPoint {
 
 		if (flag == false) {
 			serviceStatus.setStatusCode("500");
-			serviceStatus.setMessage("Exception while deletint Entity id=" + request.getId());
+			serviceStatus.setMessage("Exception while deleting Entity id=" + request.getId());
 		} else {
 			serviceStatus.setStatusCode("200");
 			serviceStatus.setMessage("Content Deleted Successfully");
