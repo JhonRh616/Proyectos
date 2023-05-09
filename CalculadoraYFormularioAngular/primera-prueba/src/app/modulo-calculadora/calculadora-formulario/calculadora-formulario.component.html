@@ -1,0 +1,12 @@
+<div class="box" id="heading">
+  <h1>{{titulo}}</h1>
+</div>
+<div class="box item">
+  <input type="number" [(ngModel)]="numero1" placeholder="Numero 1">
+  <br>
+  <input type="number" [(ngModel)]="numero2" placeholder="Numero 2">
+  <br>
+  <button class="btn-sum" [disabled]="deshabilitado" (click)="sumar()">Sumar</button>
+  <br>
+</div>
+ 

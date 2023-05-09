@@ -1,0 +1,22 @@
+<form class="box" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarPersona()">
+  <input 
+    type="text" 
+    name="nombre" 
+    id="nombre" 
+    placeholder="Nombre" 
+    [(ngModel)]="nombreInput"
+    required
+  >
+  <input 
+    type="text" 
+    name="apellido" 
+    id="apellido" 
+    placeholder="Apellido" 
+    class="form-control"
+    [(ngModel)]="apellidoInput"
+    required
+  >
+  <button type="submit" style="cursor: pointer">+</button> 
+  <button *ngIf="index != null" type="submit" style="cursor: pointer" class="button-red" (click)="eliminarPersona()">-</button>
+</form>
+  

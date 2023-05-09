@@ -1,0 +1,14 @@
+<div class="box centrado" *ngIf="!isAuthenticated() && !isCalculadora()">
+  <a routerLink="/login">Login</a>
+</div>
+
+<div class="box centrado" *ngIf="isAuthenticated() && !isCalculadora()">
+  <a style="cursor: pointer;" (click)="salir()">Salir</a>
+</div>
+
+<div class="box" id="heading" *ngIf="!isCalculadora()">
+  <h1>{{tituloListado}}</h1>
+</div>
+
+<router-outlet></router-outlet>
+   

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{tituloNgIf}}</h1>
+      <button class="btn btn-primary" [disabled]="deshabilitado" (click)="agregarPersona()">Agregar persona</button>
+      <p *ngIf="mostrar; else sinPersonaAgregada">{{mensaje}} con el título de {{titulo}}</p>
+      <ng-template #sinPersonaAgregada>
+        <p>No se ha agregado ninguna persona</p>
+      </ng-template>
+      <app-persona></app-persona>
+      <label>Título persona</label>
+      <input type="text" class="form-control" [(ngModel)]="titulo">
+      {{titulo}}
+    </div>
+  </div>
+</div>
