@@ -1,0 +1,12 @@
+<div class="movie-buttons">
+  <button [id]="movieId" class="movie-button btn btn-outline-primary">
+      <img [src]="movieImage" [alt]="movieAlt" width="auto" height="200">
+  </button>
+  <!-- Asientos para Película -->
+  <div class="seats-container" [id]="movieId">
+    <button *ngFor="let asiento of asientosPorPelicula[movieId]" class="seat btn btn-outline-secondary"
+            (click)="selectSeat(movieId, asiento.numeroAsiento)" [disabled]="asiento.asientoReservado">
+      <i class="fas fa-chair"></i>
+    </button>
+  </div>
+</div>

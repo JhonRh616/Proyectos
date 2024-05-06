@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 class="text-center">Sistema de Reserva de Cines</h1>
+  <div class="input-section form-group mb-3">
+      <label for="name">Nombre:</label>
+      <input type="text" id="username" class="form-control" placeholder="Ingrese su nombre" [(ngModel)]="username">
+  </div>
+  <div class="movie-container mb-3">
+    <app-movie-slot *ngFor="let pelicula of peliculas"
+                    [movieImage]="pelicula.assetPelicula"
+                    [movieId]="pelicula.id"
+                    [movieAlt]="pelicula.nombrePelicula"
+                    [nombre]="username">
+    </app-movie-slot>
+  </div>
+  <div id="messageArea" class="text-center mb-3">
+    <p *ngFor="let message of messages">{{ message.descripcion }}</p>
+  </div>
+</div>

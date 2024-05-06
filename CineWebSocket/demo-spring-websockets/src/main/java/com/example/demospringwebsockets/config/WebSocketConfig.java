@@ -17,7 +17,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
 
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(chatHandler, "/chat").setAllowedOrigins("*"); // Permitir conexiones desde cualquier origen
+        registry.addHandler(chatHandler, "/cine").setAllowedOrigins("*"); // Permitir conexiones desde cualquier origen
 	}
 
 }

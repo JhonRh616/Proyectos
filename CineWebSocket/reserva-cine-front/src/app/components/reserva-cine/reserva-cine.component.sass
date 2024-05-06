@@ -1,0 +1,35 @@
+// styles.sass
+
+// Variables (opcional)
+$primary-color: #0074D9
+$secondary-color: #FF4136
+
+// Estilos para el contenedor de películas
+.movie-container
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px // Espacio entre el campo de nombre y las películas
+
+// Estilos para los botones de película
+.movie-buttons
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    margin-right: 20px // Espacio entre las películas
+
+// Estilos para los botones de asientos
+.seats-container
+    display: flex
+    justify-content: space-between
+    margin-top: 10px // Espacio entre las películas y los asientos
+
+// Estilos para los botones de asientos en los otros dos conjuntos
+.seats-container:nth-child(2),
+.seats-container:nth-child(3)
+    margin-top: 5px // Espacio entre los conjuntos de asientos
+
+// Puedes agregar más estilos según tus necesidades
+.fas fa-desktop
+    font-size: 24px
+    height: 1rem
